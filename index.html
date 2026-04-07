@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grievance DApp</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .Submitted { background: orange; }
+        .Resolved { background: green; color: white; }
+        .InReview { background: blue; color: white; }
+    </style>
+</head>
+<body>
+
+<h1>University Grievance System</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Submit Grievance</h3>
+
+        <input type="text" id="description" placeholder="Enter issue" />
+
+        <select id="category">
+            <option value="Academic">Academic</option>
+            <option value="Hostel">Hostel</option>
+            <option value="Fees">Fees</option>
+        </select>
+
+        <button onclick="submitGrievance()">Submit</button>
+    </div>
+
+    <div class="card">
+        <h3>All Grievances</h3>
+        <div id="grievanceList"></div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@1.7.5/dist/web3.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

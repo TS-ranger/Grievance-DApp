@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0xB67620B8e39ad853b73bbafFEFf34f617863043c";
+export const CONTRACT_ADDRESS = process.env.DAPP_CONTRACT_ADDRESS;
 
 // Contract status values (as stored on-chain)
 export const STATUS = {

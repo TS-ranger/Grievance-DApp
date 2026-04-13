@@ -263,6 +263,59 @@ h4 { font-size: 1.3rem; }
   padding: 0.25rem;
 }
 
+/* ===== TICKER ===== */
+.ticker-container {
+  width: 100%;
+  background: var(--primary);
+  color: var(--text-on-primary);
+  overflow: hidden;
+  padding: 0.5rem 0;
+  display: flex;
+  box-shadow: var(--shadow-sm);
+  z-index: 90;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-ticker 30s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-group {
+  display: flex;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ticker-icon {
+  font-size: 0.9rem;
+  color: var(--resolved); /* Using the green color for the spark icon */
+}
+
+@keyframes scroll-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33333%); /* Scroll exactly one full group of phrases */
+  }
+}
+
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;

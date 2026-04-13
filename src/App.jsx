@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Web3Provider } from "./context/Web3Context";
 import Navbar from "./components/layout/Navbar";
+import Ticker from "./components/layout/Ticker";
 import Footer from "./components/layout/Footer";
 import LandingPage from "./pages/LandingPage";
 import UserPage from "./pages/UserPage";
@@ -11,6 +12,7 @@ export default function App() {
     <Web3Provider>
       <div className="app-layout">
         <Navbar />
+        <Ticker />
         <main className="app-main">
           <Routes>
             <Route path="/" element={<LandingPage />} />

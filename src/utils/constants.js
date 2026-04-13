@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = process.env.DAPP_CONTRACT_ADDRESS;
+export const CONTRACT_ADDRESS = import.meta.env.VITE_DAPP_CONTRACT_ADDRESS;
 
 // Contract status values (as stored on-chain)
 export const STATUS = {

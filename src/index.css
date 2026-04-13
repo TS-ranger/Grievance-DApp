@@ -1243,33 +1243,48 @@ h4 { font-size: 1.3rem; }
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .landing__features { gap: 1rem; padding: 0 1rem; }
+  .charts-grid { gap: 1rem; }
+}
+
 @media (max-width: 768px) {
   h1 { font-size: 2.25rem; }
   h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.4rem; }
 
+  .app-main { padding: 1.5rem 1rem; }
+
+  .landing { padding: 1.5rem 1rem; }
   .landing__title { font-size: 2.5rem; }
-  .landing__features { grid-template-columns: 1fr; }
-  .landing__actions { flex-direction: column; width: 100%; max-width: 320px; }
-
+  .landing__features { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .landing__actions { flex-direction: column; width: 100%; max-width: 320px; gap: 0.75rem; }
+  
   .charts-grid { grid-template-columns: 1fr; }
 
-  .donut-chart { flex-direction: column; align-items: center; }
-  .donut-chart__legend { flex-direction: row; gap: 1rem; }
+  .donut-chart { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+  .donut-chart__legend { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 
+  /* Navbar Mobile Menu */
+  .navbar__inner { height: 60px; }
+  .navbar__logo { font-size: 1.3rem; }
+  
   .navbar__links {
-    position: fixed;
+    position: absolute;
     top: 60px;
     left: 0;
     right: 0;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-light);
     flex-direction: column;
-    padding: 0.75rem;
+    padding: 1rem;
+    gap: 0.75rem;
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
+    z-index: 99;
   }
 
   .navbar__links--open {
@@ -1278,28 +1293,64 @@ h4 { font-size: 1.3rem; }
     pointer-events: all;
   }
 
-  .navbar__hamburger { display: block; }
+  .navbar__link { text-align: center; width: 100%; padding: 0.75rem; }
 
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .dashboard__actions { flex-direction: column; }
-  .admin-header { flex-direction: column; align-items: flex-start; }
+  .navbar__hamburger { display: block; }
+  
+  /* Address */
+  .navbar__address { display: none; } /* Hide on tablet/mobile to save space, buttons still show */
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .dashboard__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  
+  .admin-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
 
   .admin__filters {
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
+  .admin__filter-btn { scroll-snap-align: start; white-space: nowrap; }
+  
+  .modal { padding: 1.5rem; }
+  .toast { right: 1rem; left: 1rem; bottom: 1rem; max-width: calc(100% - 2rem); display: flex; justify-content: center; }
 }
 
 @media (max-width: 480px) {
-  .landing__title { font-size: 2rem; }
+  h1 { font-size: 2rem; }
+  .landing__title { font-size: 2.1rem; }
+  .landing__subtitle { font-size: 0.8rem; margin-bottom: 1.5rem; }
+  
+  .navbar__wallet { gap: 0.5rem; }
+  .navbar__logo { font-size: 1.1rem; }
+  
   .stats-grid { grid-template-columns: 1fr; }
-  .app-main { padding: 1rem; }
-  .bar-chart { gap: 0.75rem; }
+  .stat-card { padding: 1rem; }
+  
+  .app-main { padding: 1rem 0.75rem; }
+  
+  .bar-chart { gap: 0.75rem; height: 160px; }
+  .bar-chart__value { font-size: 1.1rem; }
+  .bar-chart__label { font-size: 0.55rem; }
 
+  .grievance-card { padding: 1rem; }
   .grievance-card__header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
+  
+  .grievance-card__actions { flex-direction: column; gap: 0.5rem; }
+  .grievance-card__actions .btn { width: 100%; }
+  
+  .dashboard__actions { grid-template-columns: 1fr; }
+  
+  .submit-form__card { padding: 1.25rem; }
+  .submit-form__title { font-size: 1.5rem; }
+  
+  .wallet-guide__step { flex-direction: column; gap: 0.75rem; align-items: center; text-align: center; }
+  .wallet-guide__step-number { margin: 0 auto; }
 }

@@ -20,7 +20,7 @@ export default function LandingPage() {
     }
   };
 
-  // If already connected, redirect
+ 
   if (isConnected) {
     return <Navigate to="/dashboard" replace />;
   }

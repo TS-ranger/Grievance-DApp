@@ -51,7 +51,7 @@ export default function UserDashboard() {
           <span className="stat-card__value">{stats.processing}</span>
         </div>
         <div className="stat-card stat-card--resolved">
-          <span className="stat-card__label">Resolved</span>
+          <span className="stat-card__label">Resolve</span>
           <span className="stat-card__value">{stats.resolved}</span>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function UserDashboard() {
           <Loader text="Loading your grievances..." />
         ) : grievances.length === 0 ? (
           <div className="grievance-list__empty">
-            <div className="grievance-list__empty-icon">📋</div>
+            <div className="grievance-list__empty-icon"></div>
             <p>You haven't submitted any grievances yet.</p>
           </div>
         ) : (
